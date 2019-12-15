@@ -99,13 +99,14 @@
 		A6C1909323A5397C003D37AF /* NEWS */ = {
 			isa = PBXGroup;
 			children = (
-				A6C1909423A5397C003D37AF /* AppDelegate.swift */,
-				A6C1909623A5397C003D37AF /* ViewController.swift */,
-				A6C1909823A5397C003D37AF /* Main.storyboard */,
-				A6C1909E23A5397C003D37AF /* Assets.xcassets */,
-				A6C190A023A5397C003D37AF /* LaunchScreen.storyboard */,
-				A6C190A323A5397C003D37AF /* Info.plist */,
-				A6C1909B23A5397C003D37AF /* NEWS.xcdatamodeld */,
+				A6E7D34023A5C0B900C76E99 /* Application */,
+				A6E7D34123A5C0C800C76E99 /* Network */,
+				A6E7D34223A5C0D600C76E99 /* View */,
+				A6E7D34323A5C0E000C76E99 /* Model */,
+				A6E7D34423A5C0E700C76E99 /* ViewModel */,
+				A6E7D34523A5C0F900C76E99 /* Utilities */,
+				A6E7D34623A5C11300C76E99 /* Resources */,
+				A6E7D34723A5C12200C76E99 /* SupportingFiles */,
 			);
 			path = NEWS;
 			sourceTree = "<group>";
@@ -126,6 +127,125 @@
 				A6C190B923A5397C003D37AF /* Info.plist */,
 			);
 			path = NEWSUITests;
+			sourceTree = "<group>";
+		};
+		A6E7D34023A5C0B900C76E99 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A6C1909423A5397C003D37AF /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A6E7D34123A5C0C800C76E99 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A6E7D35223A5CBA600C76E99 /* APIProtocols */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A6E7D34223A5C0D600C76E99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6E7D35023A5CAB000C76E99 /* ViewControllers */,
+				A6E7D34F23A5CAA100C76E99 /* TableViewCells */,
+				A6E7D34E23A5CA9600C76E99 /* CollectionViewCells */,
+				A6E7D34D23A5CA8B00C76E99 /* Common */,
+				A6E7D34C23A5CA7900C76E99 /* Helpers */,
+				A6E7D35123A5CAEE00C76E99 /* StoryBoards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6E7D34323A5C0E000C76E99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6E7D34423A5C0E700C76E99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A6E7D34523A5C0F900C76E99 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A6E7D34623A5C11300C76E99 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6C1909E23A5397C003D37AF /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A6E7D34723A5C12200C76E99 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A6C1909B23A5397C003D37AF /* NEWS.xcdatamodeld */,
+				A6C190A323A5397C003D37AF /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A6E7D34C23A5CA7900C76E99 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A6E7D34D23A5CA8B00C76E99 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A6E7D34E23A5CA9600C76E99 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		A6E7D34F23A5CAA100C76E99 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		A6E7D35023A5CAB000C76E99 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6C1909623A5397C003D37AF /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6E7D35123A5CAEE00C76E99 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				A6C1909823A5397C003D37AF /* Main.storyboard */,
+				A6C190A023A5397C003D37AF /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		A6E7D35223A5CBA600C76E99 /* APIProtocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
