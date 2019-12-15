@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>appName</key>
+	<string>NEWS</string>
+	<key>url</key>
+	<dict>
+		<key>domain</key>
+		<string>https://newsapi.org/v2</string>
+	</dict>
+	<key>localErrors</key>
+	<dict>
+		<key>jsonParseError</key>
+		<dict>
+			<key>code</key>
+			<integer>-1008</integer>
+			<key>message</key>
+			<string>Json Parse Error</string>
+		</dict>
+		<key>undefinedError</key>
+		<dict>
+			<key>code</key>
+			<integer>-1007</integer>
+			<key>message</key>
+			<string>Error Not Registered</string>
+		</dict>
+	</dict>
+	<key>apiKeys</key>
+	<dict>
+		<key>newsAPIKey</key>
+		<string>43add9152f834be1aaf4bf2a777df39d</string>
+	</dict>
+	<key>memoryCapacity</key>
+	<integer>500</integer>
+	<key>diskCapacity</key>
+	<integer>500</integer>
+</dict>
+</plist>
