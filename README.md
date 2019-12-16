@@ -7,9 +7,9 @@ iOS Test - using [`News API`](https://newsapi.org)
 - [x] iOS Version 12.0 or above 
 
 ## Features
-* Fetches Top headlines and user preferred news and display
+* Fetches Top headlines and user preferred news and displays
 	* For headlines, user can select categories from a tab view
-	* For user preferred new, user can select keywords from a tab view
+	* For user preferred news, user can select keywords from a tab view
 	* Paginated response
 * Two Orientations for News collection
 	* Table View (List View)
