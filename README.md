@@ -10,7 +10,8 @@ iOS Test - using [`News API`](https://newsapi.org)
 * Fetches Top headlines and user preferred news and displays
 	* For headlines, user can select categories from a tab view
 	* For user preferred news, user can select keywords from a tab view
-	* Paginated response
+	* Clickable link to the original post
+	* Paginated response with infinite scroll
 * Two Orientations for News collection
 	* Table View (List View)
   * Collection View (Grid View)
