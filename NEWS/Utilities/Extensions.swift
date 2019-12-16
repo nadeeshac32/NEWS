@@ -179,7 +179,7 @@ extension Date {
 extension UIImageView {
     func setImageWith(imagePath: String) {
         var image                               = UIImage(named: AppConfig.si.default_ImageName)?.withRenderingMode(.alwaysTemplate)
-        if let url = URL(string: imagePath), imagePath.range(of:"http") != nil {
+        if let url = URL(string: imagePath), imagePath.range(of:"https") != nil {
             //              print("imageName url:   \(url)")
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error != nil {
@@ -198,6 +198,7 @@ extension UIImageView {
             }).resume()
         } else {
             print("imageName : error")
+            self.image                          = image
         }
     }
 }

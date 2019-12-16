@@ -120,7 +120,7 @@ extension HTTPService: NewsAPIProtocol {
                       language: String! = "",
                       sortBy: String! = "",
                       pageSize: Int! = 20,
-                      page: Int! = 0,
+                      page: Int! = 1,
                       onSuccess: (([Article]) -> Void)?,
                       onError: ErrorCallback?) {
         
@@ -137,6 +137,7 @@ extension HTTPService: NewsAPIProtocol {
         contextPath += "&pageSize=\(pageSize!)"
         contextPath += "&page=\(page!)"
         
+        print("contextPath: \(contextPath)")
         genericRequest(method: method!, parameters: nil, contextPath: contextPath, responseType: NewsAPIResponse.self, onError: onError, completionHandler: { (newsAPIResponse, _) in
             if let articles = newsAPIResponse?.articles {
                 onSuccess?(articles)

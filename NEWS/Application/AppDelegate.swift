@@ -8,15 +8,59 @@
 
 import UIKit
 import CoreData
+import Toast_Swift
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    let manager                                 = NetworkReachabilityManager(host: "www.apple.com")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window?.makeKeyAndVisible()
+        
+        let headlinesVC                         = SwipeNavigationController(rootViewController: Headlines_VC())
+        let headlinesTabBarItem                 = UITabBarItem(title: "Headlines", image: UIImage(named: "headline_deselect"), selectedImage: UIImage(named: "headline_select"))
+        headlinesVC.tabBarItem                  = headlinesTabBarItem
+        
+        let customNewsVC                        = SwipeNavigationController(rootViewController: UserPreferred_VC())
+        let newsTabBarItem                      = UITabBarItem(title: "News", image: UIImage(named: "news_deselect"), selectedImage: UIImage(named: "news_select"))
+        customNewsVC.tabBarItem                 = newsTabBarItem
+        
+        let profileVC                           = SwipeNavigationController(rootViewController: Profile_VC())
+        let profileTabBarItem                   = UITabBarItem(title: "Profile", image: UIImage(named: "profile_deselect"), selectedImage: UIImage(named: "profile_select"))
+        profileVC.tabBarItem                    = profileTabBarItem
+        
+        let tabBarController                    = UITabBarController()
+        tabBarController.viewControllers        = [headlinesVC, customNewsVC, profileVC]
+        
+        window?.rootViewController              = tabBarController
+        
+        URLCache.shared                         = AppConfig.si.urlCache
+        
+        var style                               = ToastStyle()
+        style.messageColor                      = .white
+        style.backgroundColor                   = UIColor.black.withAlphaComponent(0.7)
+        ToastManager.shared.style               = style
+        ToastManager.shared.position            = .center
+        ToastManager.shared.duration            = 4.0
+        ToastManager.shared.isTapToDismissEnabled = true
+        
+        manager?.listener = { status in
+            if status == NetworkReachabilityManager.NetworkReachabilityStatus.notReachable {
+                self.showAlert(title: "Can't connect at the moment", message: "Check your network connection", alertAction: nil)
+            } else {
+                if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    topController.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
+        manager?.startListening()
+        
         return true
     }
 
@@ -86,6 +130,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    
+    // MARK: - Show Alert
+    func showAlert(title: String! = nil, message: String! = nil, alertAction: UIAlertAction! = nil) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if alertAction != nil {
+            ac.addAction(alertAction)
+        } else {
+            ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        }
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            topController.present(ac, animated: true, completion: nil)
         }
     }
 

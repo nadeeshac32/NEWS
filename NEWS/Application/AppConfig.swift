@@ -65,7 +65,7 @@ class AppConfig: NSObject, CLLocationManagerDelegate {
     
     var newsTVCellHeight        = 110
     var newsCVCellSize          = CGSize(width: UIScreen.main.bounds.width , height:340)
-	
+	var dataBatchSize           = 20
 	
 	//MARK: - Colors
 	let colorPrimary            = #colorLiteral(red: 0.420697093, green: 0.3667229414, blue: 0.7243047357, alpha: 1)
